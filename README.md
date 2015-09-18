@@ -1,0 +1,2 @@
+# JavaScript_Practice
+每一次学习JavaScript的代码和总结
