@@ -1,0 +1,19 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "code.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.1"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "",
+  "license": "MIT"
+}
