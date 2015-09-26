@@ -7,7 +7,7 @@ var jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify');
 
 var paths = {
-    js: ['./code.js']
+    js: ['./*.js', '!gulpfile.js', '!./*.min.js']
 };
 
 var watcherJs;
