@@ -133,11 +133,12 @@
         anchor.setAttribute("href", url);
         var search = anchor.search.slice(1);
     
-        var match;
         var result = {};
         var reg = /(\w+)(?:=([^&]*))?/g; //切记别忘了 g 参数，设置全局模式
-        while ( match = reg.exec(search) ) {
+        var match = reg.exec(search);
+        while ( match ) {
             result[match[1]] = match[2];
+            match = reg.exec(search);
         }
     
         return result;
