@@ -216,4 +216,4 @@
 
     Global 对象的 `encodeURI()` 和 `encodeURIComponent()` 方法可以对 URI 进行编码。使用前者编码后的结果是除了空格之外的其他字符都原封不动，只有空格被替换成了 `%20`。而后者则会使用对应的编码替换所有非字母数字字符。
     
-    相应的解码方式是 `decodeURI()` 和 `encodeURIComponent`。
+    相应的解码方式是 `decodeURI()` 和 `decodeURIComponent`。
