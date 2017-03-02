@@ -11,6 +11,25 @@ function addLoadEvent(newFunc) {
     }
 }
 
+function throttleAndDebounce(fun, delay, atLeast) {
+    let startTime = new Date(),
+        timeout = null;
+
+    return () => {
+        let curTime = new Date();
+        clearTimeout(timeout);
+
+        if (curTime - startTime >= atLeast) { // 节流
+            fun();
+            startTime = curTime;
+        } else {
+            timeout = setTimeout(function () { // 去抖动
+                fun();
+            }, delay);
+        }
+    };
+}
+
 function lazyLoad() {
     let images = document.getElementsByTagName('img'),
         len = images.length,
@@ -23,7 +42,7 @@ function lazyLoad() {
         let tmpImg;
 
         for (let i = n; i < len; i++) {
-            tmpImg = images[i]
+            tmpImg = images[i];
 
             if (tmpImg.offsetTop <= seeHeight + scrollTop) {
 
@@ -40,3 +59,4 @@ function lazyLoad() {
 
 let loadImages = lazyLoad();
 addLoadEvent(loadImages);
+window.addEventListener('scroll', throttleAndDebounce(loadImages, 500, 1000), false);
